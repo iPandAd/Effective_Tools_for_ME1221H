@@ -59,6 +59,8 @@ P.S，也可以参考王育文整理的安装教程[Ubuntu安装](https://faithf
 
 对于`.deb`文件，在文件所在目录打开终端`Ctrl + Alt + T`，使用`sudo dpkg -i xxx.deb`即可完成安装。
 
+> 对于`.deb`文件，也可以选择安装`gdebi`，可以较为方便的进行安装。
+
 或者使用`sudo apt-get install xxx`，也可进行软件安装。
 
 其他情况可以参考软件官网的安装教程。
