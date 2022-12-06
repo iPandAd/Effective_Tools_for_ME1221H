@@ -65,13 +65,9 @@ P.S，也可以参考王育文整理的安装教程[Ubuntu安装](https://faithf
 
 其他情况可以参考软件官网的安装教程。
 
-
-
-[Linux(Ubuntu)不好用吗？是因为你没有安装这些软件](https://zhuanlan.zhihu.com/p/39052366)
-
-这篇博客介绍了一些Ubuntu系统比较常用的软件。
-
-
+> [Linux(Ubuntu)不好用吗？是因为你没有安装这些软件](https://zhuanlan.zhihu.com/p/39052366)
+>
+> 这篇博客介绍了一些Ubuntu系统比较常用的软件。
 
 ### WPS
 
@@ -123,9 +119,26 @@ P.S，也可以参考王育文整理的安装教程[Ubuntu安装](https://faithf
 
 ## 深度学习环境配置
 
+安装顺序最好按照`显卡驱动+CUDA+cuDNN+深度学习框架`，Anaconda为可选项，目前还在学习当中，后续会继续更新
+
+### 显卡驱动+CUDA+cuDNN
+
+参考B站教程
+
+[搭建舒适的Ubuntu使用环境系列——安装显卡驱动、CUDA、cuDNN及其简单介绍](https://www.bilibili.com/video/BV16Y411M7SC/?spm_id_from=333.788&vd_source=fa013dd1b93548577d70801e8af67c4a)
+
 ### Anaconda
 
 [Ubuntu下安装Anaconda的步骤（带图）](https://zhuanlan.zhihu.com/p/426655323)
 
+### Pytorch和Tensorflow
 
+同样参考B站视频教程
 
+[搭建舒适的Ubuntu使用环境系列——从零到一搭建深度学习生产环境(Pytorch、Tensorflow)并使用GPU版本，附详细文档(以Ubuntu系统为例)](https://www.bilibili.com/video/BV13Y411T71Y/?spm_id_from=333.788&vd_source=fa013dd1b93548577d70801e8af67c4a)
+
+## 其他配置
+
+### 时间同步
+
+使用Ubuntu再切换回Windows系统时会出现时间不对的情况，使用以下代码即可
