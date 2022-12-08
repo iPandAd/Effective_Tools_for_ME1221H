@@ -152,7 +152,39 @@ sudo apt install github-desktop
 
 ## 目前安装的软件清单
 
+### 编程工具
+
 - VSCode
+- MATLAB
+- Anaconda
+- GitHub Desktop
+
+### 文档编写
+
+- WPS
+- Typora
+- Foxit
+- Gedit
+
+### 图像视频
+
+- 火焰截图
+- VLC
+- Inkscape
+- GIMP
+- OBS Studio
+
+### 办公软件
+
+- 腾讯会议
+- 向日葵
+- 坚果云
+- Zotero
+
+### 其他
+
+- Chrome
+- GDebi
 
 ## 深度学习环境配置
 
