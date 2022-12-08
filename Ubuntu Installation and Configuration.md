@@ -165,6 +165,7 @@ sudo apt install github-desktop
 - Typora
 - Foxit
 - Gedit
+- Pandoc
 
 ### 图像视频
 
