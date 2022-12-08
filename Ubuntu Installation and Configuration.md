@@ -152,7 +152,7 @@ sudo apt install github-desktop
 
 ## 目前安装的软件清单
 
-
+- VSCode
 
 ## 深度学习环境配置
 
