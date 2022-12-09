@@ -284,6 +284,55 @@ tf.config.list_physical_devices('GPU')
 
 ## 其他配置
 
+### 交大VPN配置
+
+学校网络信息中心提供教程中的代码如果直接复制粘贴会出现无法成功运行的情况，需要手动输入。连接VPN可以帮助访问学校授权正版软件、使用学校提供的学术资源。
+
+教程网站如下[Linux 系统交大VPN使用说明](https://net.sjtu.edu.cn/info/1200/2665.htm)。使用方式1，代码如下：
+
+```shell
+# 查看Ubuntu系统版本信息
+lsb_release --all
+
+# strongswan附属插件及相关工具
+sudo apt install strongswan strongswan-swanctl
+sudo apt install libstrongswan-extra-plugins libcharon-extra-plugins
+sudo apt install resolvconf curl
+
+# 重新导入系统信任证书列表
+sudo rm -f /etc/ipsec.d/cacerts/*
+sudo ln -s /etc/ssl/certs/* /etc/ipsec.d/cacerts/
+
+# 打开并修改/etc/ipsec.conf文件
+sudo gedit /etc/ipsec.conf
+# 打开后将下列代码复制到文件最后
+conn "sjtu-student"
+    keyexchange=ikev2
+    left=%config
+    leftsourceip=%config4,%config6
+    leftauth=eap-peap
+    
+    right=stu.vpn.sjtu.edu.cn
+    rightid=@stu.vpn.sjtu.edu.cn
+    rightsendcert=never
+    
+    rightsubnet=0.0.0.0/0,2000::/3
+    rightauth=pubkey
+    eap_identity="myname" # myname替换为jAccount账号
+    
+    auto=add
+    aaa_identity="@radius.net.sjtu.edu.cn"
+
+# 打开并修改/etc/ipsec.secrets文件
+sudo gedit /etc/ipsec.secrets
+# 打开后将下列代码复制到文件最后
+"myname" : EAP "mypassword" # myname和mypassword替换为jAccount账号和密码
+
+# 连接和断开交大VPN
+sudo ipsec up "sjtu-student" # 连接
+sudo ipsec down "sjtu-student" # 断开
+```
+
 ### 时间同步
 
 使用Ubuntu再切换回Windows系统时会出现时间不对的情况，使用以下代码即可
