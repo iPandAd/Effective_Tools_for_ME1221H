@@ -158,7 +158,7 @@ sudo apt install github-desktop
 - MATLAB
 - Anaconda
 - GitHub Desktop
-- Steam++(Watt Toolkit)
+- Steam++(Watt Toolkit)：用于稳定连接GitHub
 
 ### 文档编写
 
@@ -187,7 +187,7 @@ sudo apt install github-desktop
 
 - Chrome
 - GDebi
-- Steam
+- Steam：登陆时需要科学上网
 
 ## 深度学习环境配置
 
