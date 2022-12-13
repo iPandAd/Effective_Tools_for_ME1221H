@@ -360,3 +360,4 @@ Ubuntu系统下笔者选用Foxit Reader作为.pdf文件的阅读器，为了保�
 > 1. 在参考教程执行`wget git.io/trans`一步时，需要科学上网，否则会出现无法访问链接的情况
 > 2. 如果需要使用Google翻译，也需要科学上网。软件自带的Wikipedia可以直接访问，但是只能对单个单词进行翻译
 
+上述方式可以实现整段或整句的翻译，如果需要对单个单词进行翻译，也可以使用英英对照词典。可以参考以下博客进行安装：[Ubuntu,Linux下goldendict词典安装及配置](https://blog.csdn.net/www_helloworld_com/article/details/85019862)
