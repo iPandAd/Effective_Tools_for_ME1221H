@@ -352,3 +352,6 @@ sudo hwclock --localtime --systohc
 参考以下博客
 
 [ubuntu实时显示网速cpu占用和内存占用率](https://www.shuzhiduo.com/A/MAzALqWod9/)
+
+### FoxitReader实现划词翻译
+
