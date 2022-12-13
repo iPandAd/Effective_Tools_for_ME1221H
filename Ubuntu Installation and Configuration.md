@@ -43,11 +43,11 @@ Ubuntu安装可以参考此博客，其中有关分区和启动引导项的内�
 
 启动项修复是为了实现移动硬盘插在其他电脑上也可以启动Ubuntu，这里需要用到`USB制作`中装好Ubuntu镜像的U盘。
 
-P.S. 运行博客中代码时记得联网。
+> 运行博客中代码时记得联网。
 
 至此，Ubuntu安装完成，下一步将安装常用软件。
 
-P.S，也可以参考王育文整理的安装教程[Ubuntu安装](https://faithful-efraasia-59a.notion.site/Ubuntu-6107a23b6b6b4449bd15e7be1776e2ec)
+> 也可以参考王育文整理的安装教程[Ubuntu安装](https://faithful-efraasia-59a.notion.site/Ubuntu-6107a23b6b6b4449bd15e7be1776e2ec)
 
 ## 软件安装
 
@@ -354,4 +354,9 @@ sudo hwclock --localtime --systohc
 [ubuntu实时显示网速cpu占用和内存占用率](https://www.shuzhiduo.com/A/MAzALqWod9/)
 
 ### FoxitReader实现划词翻译
+
+Ubuntu系统下笔者选用Foxit Reader作为.pdf文件的阅读器，为了保证阅读英文文献时能够尽快明白生词含义，通过GoldenDict实现划词翻译。参考教程如下：[Ubuntu使用Foxit Reader + GoldenDict实现PDF划译](https://blog.csdn.net/huludan/article/details/118669802)
+
+> 1. 在参考教程执行`wget git.io/trans`一步时，需要科学上网，否则会出现无法访问链接的情况
+> 2. 如果需要使用Google翻译，也需要科学上网。软件自带的Wikipedia可以直接访问，但是只能对单个单词进行翻译
 
