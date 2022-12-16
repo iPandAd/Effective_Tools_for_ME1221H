@@ -159,6 +159,7 @@ sudo apt install github-desktop
 - Anaconda
 - GitHub Desktop
 - Steam++(Watt Toolkit)：用于稳定连接GitHub
+- SSH
 
 ### 文档编写
 
@@ -175,6 +176,7 @@ sudo apt install github-desktop
 - Inkscape
 - GIMP
 - OBS Studio
+- kdenlive
 
 ### 办公软件
 
@@ -352,6 +354,21 @@ sudo hwclock --localtime --systohc
 参考以下博客
 
 [ubuntu实时显示网速cpu占用和内存占用率](https://www.shuzhiduo.com/A/MAzALqWod9/)
+
+> 找到了一个界面和功能类似Windows系统中任务管理器的软件：Sysmontask，GitHub网址如下：
+>
+> [SysMonTask](https://github.com/KrispyCamel4u/SysMonTask)
+>
+> 安装代码如下
+>
+> ```shell
+> sudo add-apt-repository ppa:camel-neeraj/sysmontask
+> sudo apt install sysmontask
+> sudo apt install python3-pip
+> sudo pip3 install psutil
+> # 安装后执行下列代码可以打开，或者在开始菜单里点击打开也可
+> sudo sysmontask
+> ```
 
 ### FoxitReader实现划词翻译
 
