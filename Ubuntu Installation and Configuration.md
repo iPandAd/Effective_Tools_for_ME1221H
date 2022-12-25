@@ -150,6 +150,10 @@ sudo apt install github-desktop
 
 还是建议使用命令行进行git操作。
 
+### PyCharm
+
+[Ubuntu安装pycharm专业版方法](https://blog.csdn.net/qq_38410428/article/details/118912973)
+
 ## 目前安装的软件清单
 
 ### 编程工具
