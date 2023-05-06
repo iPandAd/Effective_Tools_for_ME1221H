@@ -141,11 +141,12 @@ sudo apt install pdftk
 
 [ubuntu 安装GitHub desktop](https://blog.csdn.net/qq_20477309/article/details/114199294)
 
+[GitHub Desktop - The Linux Fork](https://gitcode.net/mirrors/shiftkey/desktop?utm_source=csdn_github_accelerator&from_codechina=yes)
+
 ```shell
-wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
-sudo apt-get update
-sudo apt install github-desktop
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+sudo apt update && sudo apt install github-desktop
 ```
 
 还是建议使用命令行进行git操作。
@@ -188,6 +189,7 @@ sudo apt install github-desktop
 - 向日葵
 - 坚果云
 - Zotero
+- 百度网盘
 
 ### 其他
 
@@ -223,6 +225,11 @@ sudo apt install github-desktop
 
 在[CUDA Toolkit Archive](https://developer.nvidia.cn/cuda-toolkit-archive)中下载与显卡驱动对应的CUDA版本，笔者参考B站教程选择CUDA11.1版本
 
+```shell
+wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+sudo sh cuda_11.1.0_455.23.05_linux.run
+```
+
 安装完成后需要修改环境变量，在bashrc中添加下列两行
 
 ```
@@ -251,6 +258,13 @@ sudo ./mnistCUDNN
 出现`Test passed!`即说明安装成功
 
 ### Anaconda
+
+可以换成miniconda3，参考李沐大神的教程[03 安装【动手学深度学习v2】](https://www.bilibili.com/video/BV18p4y1h7Dr/?spm_id_from=333.880.my_history.page.click)，更加简单
+
+```shell
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh
+bash Miniconda3-py39_23.3.1-0-Linux-x86_64.sh 
+```
 
 [Ubuntu下安装Anaconda的步骤（带图）](https://zhuanlan.zhihu.com/p/426655323)
 
