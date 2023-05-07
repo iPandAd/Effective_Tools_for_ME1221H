@@ -67,6 +67,10 @@ Ubuntu安装可以参考此博客，其中有关分区和启动引导项的内�
 >
 > 这篇博客介绍了一些Ubuntu系统比较常用的软件。
 
+### 输入法
+
+使用自带的输入法即可，参考博客[在Ubuntu20.04中安装中文输入法](https://blog.csdn.net/u013819452/article/details/125324881)
+
 ### WPS
 
 [ubuntu20.04安装WPS教程](https://blog.csdn.net/zeye5731/article/details/124486830)
@@ -141,11 +145,12 @@ sudo apt install pdftk
 
 [ubuntu 安装GitHub desktop](https://blog.csdn.net/qq_20477309/article/details/114199294)
 
+[GitHub Desktop - The Linux Fork](https://gitcode.net/mirrors/shiftkey/desktop?utm_source=csdn_github_accelerator&from_codechina=yes)
+
 ```shell
-wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc > /dev/null
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
-sudo apt-get update
-sudo apt install github-desktop
+wget -qO - https://apt.packages.shiftkey.dev/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/shiftkey-packages.gpg > /dev/null
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/shiftkey-packages.gpg] https://apt.packages.shiftkey.dev/ubuntu/ any main" > /etc/apt/sources.list.d/shiftkey-packages.list'
+sudo apt update && sudo apt install github-desktop
 ```
 
 还是建议使用命令行进行git操作。
@@ -188,6 +193,7 @@ sudo apt install github-desktop
 - 向日葵
 - 坚果云
 - Zotero
+- 百度网盘
 
 ### 其他
 
@@ -223,6 +229,11 @@ sudo apt install github-desktop
 
 在[CUDA Toolkit Archive](https://developer.nvidia.cn/cuda-toolkit-archive)中下载与显卡驱动对应的CUDA版本，笔者参考B站教程选择CUDA11.1版本
 
+```shell
+wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
+sudo sh cuda_11.1.0_455.23.05_linux.run
+```
+
 安装完成后需要修改环境变量，在bashrc中添加下列两行
 
 ```
@@ -251,6 +262,13 @@ sudo ./mnistCUDNN
 出现`Test passed!`即说明安装成功
 
 ### Anaconda
+
+可以换成miniconda3，参考李沐大神的教程[03 安装【动手学深度学习v2】](https://www.bilibili.com/video/BV18p4y1h7Dr/?spm_id_from=333.880.my_history.page.click)，更加简单
+
+```shell
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh
+bash Miniconda3-py39_23.3.1-0-Linux-x86_64.sh 
+```
 
 [Ubuntu下安装Anaconda的步骤（带图）](https://zhuanlan.zhihu.com/p/426655323)
 
@@ -336,6 +354,9 @@ sudo gedit /etc/ipsec.secrets
 # 打开后将下列代码复制到文件最后
 "myname" : EAP "mypassword" # myname和mypassword替换为jAccount账号和密码
 
+# 重新启动VPN，不执行会提示找不到config
+sudo ipsec restart
+
 # 连接和断开交大VPN
 sudo ipsec up "sjtu-student" # 连接
 sudo ipsec down "sjtu-student" # 断开
@@ -369,7 +390,7 @@ sudo hwclock --localtime --systohc
 > sudo add-apt-repository ppa:camel-neeraj/sysmontask
 > sudo apt install sysmontask
 > sudo apt install python3-pip
-> sudo pip3 install psutil
+> sudo pip3 install psutil==5.7.2 # 版本太低无法运行
 > # 安装后执行下列代码可以打开，或者在开始菜单里点击打开也可
 > sudo sysmontask
 > ```
