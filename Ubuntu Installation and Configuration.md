@@ -350,6 +350,9 @@ sudo gedit /etc/ipsec.secrets
 # 打开后将下列代码复制到文件最后
 "myname" : EAP "mypassword" # myname和mypassword替换为jAccount账号和密码
 
+# 重新启动VPN，不执行会提示找不到config
+sudo ipsec restart
+
 # 连接和断开交大VPN
 sudo ipsec up "sjtu-student" # 连接
 sudo ipsec down "sjtu-student" # 断开
@@ -383,7 +386,7 @@ sudo hwclock --localtime --systohc
 > sudo add-apt-repository ppa:camel-neeraj/sysmontask
 > sudo apt install sysmontask
 > sudo apt install python3-pip
-> sudo pip3 install psutil
+> sudo pip3 install psutil==5.7.2 # 版本太低无法运行
 > # 安装后执行下列代码可以打开，或者在开始菜单里点击打开也可
 > sudo sysmontask
 > ```
